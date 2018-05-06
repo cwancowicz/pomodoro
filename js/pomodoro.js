@@ -1,5 +1,6 @@
 
 var pomo = createDefaultPomodoro();
+var pause = false;
 
 $(document).ready(function () {
     addButtonListeners(pomo);
@@ -23,6 +24,8 @@ function addButtonListeners(pomo) {
     });
 
     $("#startTimerButtonId").click(startTimer);
+
+    $("#pauseTimerButtonId").click(pauseTimer);
 }
 
 function createDefaultPomodoro() {
@@ -78,14 +81,32 @@ function decreaseBreak() {
     return pomo.pomoBreakLength;
 }
 
+function pauseTimer() {
+    if (pause) {
+        pause = false;
+    } else {
+        pause = true;
+    }
+}
+
+var timer = null;
 function startTimer() {
+    if (timer) {
+        clearInterval(timer);
+    }
     var intervalTimeLength = pomo.pomodoroTime * 60;
     var intervalEndTime = now() + intervalTimeLength;
-    setInterval(function() {
+    timer = setInterval(function() {
+
+        if (pause) {
+            intervalEndTime++;
+            return;
+        }
 
         var timeLeft = intervalEndTime - now();
         if (timeLeft <= 0) {
             clearInterval();
+            pause = false;
         } else {
             $("#pomoTimeValueId").html(formatTimeLeft(timeLeft));
         }

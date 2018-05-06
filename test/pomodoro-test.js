@@ -9,6 +9,7 @@ describe('pomodoro functions', function() {
 
     var pomoTimeValue = element(by.id('pomoTimeValueId'));
     var startTimer = element(by.id('startTimerButtonId'));
+    var pauseTimer = element(by.id('pauseTimerButtonId'));
 
     beforeEach(function () {
         browser.waitForAngularEnabled(false);
@@ -74,6 +75,22 @@ describe('pomodoro functions', function() {
         increaseBreakTo(61);
         expect(pomoBreakLength.getText().then(parseInt)).toEqual(59);
     });
+
+    it('should pause timer when timer has started', function() {
+        startTimer.click();
+        browser.sleep(1000);
+        pauseTimer.click();
+        browser.sleep(2000);
+        expect(pomoTimeValue.getText()).toEqual('24:59');
+    });
+
+    it('should start over when startTime pressed after startTimer pressed first time', function() {
+        startTimer.click();
+        browser.sleep(1000);
+        startTimer.click();
+        browser.sleep(1000);
+        expect(pomoTimeValue.getText()).toEqual('24:59');
+    })
 
     function decreaseTimerTo(length) {
         for (var i = 25; i > length; i--) {
