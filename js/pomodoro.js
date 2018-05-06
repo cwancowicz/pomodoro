@@ -92,7 +92,7 @@ function pauseTimer() {
 var timer = null;
 function startTimer() {
     if (timer) {
-        clearInterval(timer);
+        clearTimer(timer);
     }
     var intervalTimeLength = pomo.pomodoroTime * 60;
     var intervalEndTime = now() + intervalTimeLength;
@@ -105,13 +105,17 @@ function startTimer() {
 
         var timeLeft = intervalEndTime - now();
         if (timeLeft <= 0) {
-            clearInterval();
-            pause = false;
+            clearTimer(timer);
         } else {
             $("#pomoTimeValueId").html(formatTimeLeft(timeLeft));
         }
 
     }, 1000);
+}
+
+function clearTimer(timer) {
+    clearInterval(timer);
+    pause = false;
 }
 
 function now() {

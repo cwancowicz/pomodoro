@@ -9,7 +9,7 @@ h1 {
 
 .timer {
     position: absolute;
-    top:55%;
+    top:50%;
     left: 0;
     width: 100%;
     color: white;
@@ -17,4 +17,8 @@ h1 {
 
 .thumbnail {
     position: absolute;
+}
+
+#pomoTimeValueId {
+    font-size: 350%;
 }
