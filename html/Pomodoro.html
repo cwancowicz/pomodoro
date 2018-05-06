@@ -3,23 +3,45 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="lib/easytimer/dist/easytimer.min.js"></script>
     <script src="../js/pomodoro.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/pomodoro.css">
 
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
 </head>
 <body>
 
-<button id="startTimerButtonId">Start Timer</button>
-<p id="pomoTimeValueId">--:--</p>
+<div class="container center">
+    <div class="row">
+        <div class="col-xs-4">
+            <h1>Pomodoro Timer</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="thumbnail text-center">
+            <img id="tomato" class="img-responsive" alt=""
+                 src="https://bloximages.chicago2.vip.townnews.com/auburnpub.com/content/tncms/assets/v3/editorial/8/39/839be827-0eaf-5d2d-a217-2c464e169bab/59b45f7e1120d.image.jpg">
+            <div class="timer">
+                <p id="pomoTimeValueId">--:--</p>
+            </div>
+        </div>
 
-<button id="incPomodoroTimeId">+</button>
-<p id="pomodoroTimeId">25</p>
-<button id="decPomodoroTimeId">-</button>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button id="startTimerButtonId">Start Timer</button>
 
-<button id="incPomoBreakLengthId">+</button>
-<p id="pomoBreakLengthId">5</p>
-<button id="decPomoBreakLengthId">-</button>
+            <button id="incPomodoroTimeId">+</button>
+            <p id="pomodoroTimeId">25</p>
+            <button id="decPomodoroTimeId">-</button>
+
+            <button id="incPomoBreakLengthId">+</button>
+            <p id="pomoBreakLengthId">5</p>
+            <button id="decPomoBreakLengthId">-</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

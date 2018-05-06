@@ -1,0 +1,20 @@
+h1 {
+    color: red;
+}
+
+#tomato {
+    max-height: 30%;
+    max-width: 30%;
+}
+
+.timer {
+    position: absolute;
+    top:55%;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+.thumbnail {
+    position: absolute;
+}
