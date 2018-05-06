@@ -13,13 +13,24 @@
 </head>
 <body>
 
-<div class="container center">
+<div class="container">
     <div class="row">
+        <div class="col-xs-4"></div>
         <div class="col-xs-4">
             <h1>Pomodoro Timer</h1>
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-2">
+            <button id="startTimerButtonId">Start Timer</button>
+        </div>
+        <div class="col-xs-2">
+            <button id="pauseTimerButtonId">Pause ||</button>
+        </div>
+    </div>
+    <div class="row">
+
         <div class="thumbnail text-center">
             <img id="tomato" class="img-responsive" alt=""
                  src="https://bloximages.chicago2.vip.townnews.com/auburnpub.com/content/tncms/assets/v3/editorial/8/39/839be827-0eaf-5d2d-a217-2c464e169bab/59b45f7e1120d.image.jpg">
@@ -30,19 +41,27 @@
 
     </div>
     <div class="row">
-        <div class="col-xs-12">
-            <button id="startTimerButtonId">Start Timer</button>
-
-            <button id="incPomodoroTimeId">+</button>
-            <p id="pomodoroTimeId">25</p>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-1">
             <button id="decPomodoroTimeId">-</button>
-
-            <button id="incPomoBreakLengthId">+</button>
-            <p id="pomoBreakLengthId">5</p>
-            <button id="decPomoBreakLengthId">-</button>
-
-            <button id="pauseTimerButtonId">Pause ||</button>
         </div>
+        <div class="col-xs-1">
+            <p id="pomodoroTimeId">25</p>
+        </div>
+        <div class="col-xs-1">
+            <button id="incPomodoroTimeId">+</button>
+        </div>
+
+        <div class="col-xs-1">
+            <button id="incPomoBreakLengthId">+</button>
+        </div>
+        <div class="col-xs-1">
+            <p id="pomoBreakLengthId">5</p>
+        </div>
+        <div class="col-xs-1">
+            <button id="decPomoBreakLengthId">-</button>
+        </div>
+
     </div>
 </div>
 </body>
