@@ -2,6 +2,14 @@ h1 {
     color: red;
 }
 
+p {
+    color: red;
+}
+
+button {
+    color: red;
+}
+
 #tomato {
     max-height: 30%;
     max-width: 30%;

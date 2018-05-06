@@ -84,8 +84,10 @@ function decreaseBreak() {
 function pauseTimer() {
     if (pause) {
         pause = false;
+        $("#pauseTimerButtonId").html("Pause Timer");
     } else {
         pause = true;
+        $("#pauseTimerButtonId").html("Resume Timer");
     }
 }
 

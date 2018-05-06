@@ -20,11 +20,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-offset-4 col-xs-2 text-center">
-            <button id="startTimerButtonId">Start Timer</button>
+        <div class="col-xs-offset-4 col-xs-2">
+            <button class="btn-block" id="startTimerButtonId">Start Timer</button>
         </div>
         <div class="col-xs-2 text-center">
-            <button id="pauseTimerButtonId">Pause Timer</button>
+            <button class="btn-block" id="pauseTimerButtonId">Pause Timer</button>
         </div>
     </div>
     <div class="row">
@@ -32,36 +32,44 @@
             <img id="thumbnail tomato" class="img-responsive" alt=""
                  src="https://bloximages.chicago2.vip.townnews.com/auburnpub.com/content/tncms/assets/v3/editorial/8/39/839be827-0eaf-5d2d-a217-2c464e169bab/59b45f7e1120d.image.jpg">
             <div class="timer">
-                <p id="pomoTimeValueId">--:--</p>
+                <p style="color:white" id="pomoTimeValueId">--:--</p>
             </div>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-xs-offset-3 col-xs-1">
-            <button class="btn-block" id="decPomodoroTimeId">-</button>
-        </div>
-        <div class="col-xs-1">
-            <p id="pomodoroTimeId">25</p>
-        </div>
-        <div class="col-xs-1">
-            <button class="btn-block" id="incPomodoroTimeId">+</button>
+        <div class="col-xs-offset-3 col-xs-2 well">
+            <div class="row">
+                <div class="col-xs-5">
+                    <button class="btn-block" id="decPomodoroTimeId">-</button>
+                </div>
+                <div class="col-xs-2">
+                    <p id="pomodoroTimeId">25</p>
+                </div>
+                <div class="col-xs-5">
+                    <button class="btn-block" id="incPomodoroTimeId">+</button>
+                </div>
+            </div>
         </div>
 
-        <div class="col-xs-1">
-            <button class="btn-block" id="decPomoBreakLengthId">-</button>
-        </div>
-        <div class="col-xs-1">
-            <p id="pomoBreakLengthId">5</p>
-        </div>
-        <div class="col-xs-1">
-            <button class="btn-block" id="incPomoBreakLengthId">+</button>
+        <div class="col-xs-offset-2 col-xs-2 well">
+            <div class="row">
+                <div class="col-xs-5">
+                    <button class="btn-block" id="decPomoBreakLengthId">-</button>
+                </div>
+                <div class="col-xs-2">
+                    <p id="pomoBreakLengthId">5</p>
+                </div>
+                <div class="col-xs-5">
+                    <button class="btn-block" id="incPomoBreakLengthId">+</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-xs-offset-3 col-xs-3">
+        <div class="col-xs-offset-3 col-xs-2">
             <p>Time Length</p>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-offset-2 col-xs-2">
             <p>Break Length</p>
         </div>
     </div>

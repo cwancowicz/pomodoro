@@ -90,7 +90,13 @@ describe('pomodoro functions', function() {
         startTimer.click();
         browser.sleep(1000);
         expect(pomoTimeValue.getText()).toEqual('24:59');
-    })
+    });
+
+    it('should say Resume after pause button pressed', function() {
+        startTimer.click();
+        pauseTimer.click();
+        expect(pauseTimer.getText()).toEqual('Resume Timer');
+    });
 
     function decreaseTimerTo(length) {
         for (var i = 25; i > length; i--) {
