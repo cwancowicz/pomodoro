@@ -5,6 +5,7 @@ h1 {
 #tomato {
     max-height: 30%;
     max-width: 30%;
+    /*position: relative;*/
 }
 
 .timer {
