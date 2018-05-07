@@ -123,18 +123,18 @@ function startTimer(length, nextTimer) {
 
     }, 1000);
 }
-
+var animations = "animated shake bounce infinite";
 function clearTimer(timer) {
     clearInterval(timer);
-    $("#tomatoDiv").addClass("animated bounce infinite");
+    $("#tomatoDiv").addClass(animations);
     clearBounce();
     pause = false;
 }
 
 function clearBounce() {
     setTimeout(function () {
-        $("#tomatoDiv").removeClass("animated bounce");
-    }, 3000);
+        $("#tomatoDiv").removeClass(animations);
+    }, 1000);
 }
 
 function now() {
