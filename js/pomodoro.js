@@ -1,4 +1,3 @@
-
 var pomo = createDefaultPomodoro();
 var pause = false;
 
@@ -23,7 +22,7 @@ function addButtonListeners(pomo) {
         updatePomoBreakLength(pomo, decreaseBreak);
     });
 
-    $("#startTimerButtonId").click(startTimer);
+    $("#startTimerButtonId").click(startPomodoroTimer);
 
     $("#pauseTimerButtonId").click(pauseTimer);
 }
@@ -91,14 +90,23 @@ function pauseTimer() {
     }
 }
 
+function startPomodoroTimer() {
+    startTimer(pomo.pomodoroTime * 60, startBreakTimer);
+}
+
+function startBreakTimer() {
+    startTimer(pomo.pomoBreakLength * 60, startPomodoroTimer);
+}
+
 var timer = null;
-function startTimer() {
+
+function startTimer(length, nextTimer) {
     if (timer) {
         clearTimer(timer);
     }
-    var intervalTimeLength = pomo.pomodoroTime * 60;
-    var intervalEndTime = now() + intervalTimeLength;
-    timer = setInterval(function() {
+
+    var intervalEndTime = now() + length;
+    timer = setInterval(function () {
 
         if (pause) {
             intervalEndTime++;
@@ -106,8 +114,9 @@ function startTimer() {
         }
 
         var timeLeft = intervalEndTime - now();
-        if (timeLeft <= 0) {
+        if (timeLeft < 0) {
             clearTimer(timer);
+            nextTimer();
         } else {
             $("#pomoTimeValueId").html(formatTimeLeft(timeLeft));
         }
@@ -117,7 +126,15 @@ function startTimer() {
 
 function clearTimer(timer) {
     clearInterval(timer);
+    $("#tomatoDiv").addClass("animated bounce infinite");
+    clearBounce();
     pause = false;
+}
+
+function clearBounce() {
+    setTimeout(function () {
+        $("#tomatoDiv").removeClass("animated bounce");
+    }, 3000);
 }
 
 function now() {
